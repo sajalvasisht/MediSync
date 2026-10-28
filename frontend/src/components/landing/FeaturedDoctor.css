@@ -1,0 +1,244 @@
+/* ============================================================
+   Featured Doctor Section Styles
+   ============================================================ */
+
+.featured-doc-section {
+  padding: var(--space-12) var(--container-padding) var(--space-16);
+  background-color: var(--color-bg);
+}
+
+.featured-doc-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.featured-doc-card {
+  background: #ffffff;
+  border-radius: 36px;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  border: 1px solid rgba(212, 221, 213, 0.7);
+  box-shadow: 0 16px 50px rgba(28, 36, 32, 0.05);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+/* ── Left Details ────────────────────────────────────────── */
+
+.featured-doc-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.featured-doc-badge {
+  margin-bottom: var(--space-4);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  padding: 0.35rem 0.85rem;
+}
+
+.featured-doc-name {
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+}
+
+.featured-doc-lead {
+  font-size: 0.98rem;
+  line-height: 1.68;
+  color: #556758;
+  margin-bottom: var(--space-8);
+  max-width: 540px;
+}
+
+.featured-doc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  width: 100%;
+  margin-bottom: var(--space-8);
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.featured-doc-metric {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.featured-doc-icon {
+  color: var(--color-sage);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.featured-doc-icon--star {
+  color: #df9e38;
+}
+
+.featured-metric-val {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.featured-metric-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #7b9180;
+  letter-spacing: 0.04em;
+}
+
+.featured-doc-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.featured-doc-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(28, 36, 32, 0.18);
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.featured-doc-cta:hover {
+  background-color: #2b3930;
+  transform: translateY(-2px);
+}
+
+.featured-doc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: #556758;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  transition: color var(--duration-fast);
+}
+
+.featured-doc-link:hover {
+  color: var(--color-primary);
+}
+
+/* ── Right Visual Portrait ───────────────────────────────── */
+
+.featured-doc-right {
+  display: flex;
+  justify-content: center;
+}
+
+.featured-doc-portrait {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  height: 420px;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(28, 36, 32, 0.12);
+  border: 1px solid rgba(212, 221, 213, 0.7);
+  background: linear-gradient(145deg, #dce8df 0%, #b8cdc0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem;
+}
+
+.featured-doc-portrait-art {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.4) 0%, transparent 70%);
+}
+
+.featured-doc-initials {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 700;
+  font-style: italic;
+  color: rgba(28, 36, 32, 0.18);
+  letter-spacing: -2px;
+}
+
+.featured-doc-float-tag {
+  position: relative;
+  z-index: 2;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: #274730;
+}
+
+.featured-tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: #3a8c4e;
+  animation: pulse-dot 2s infinite;
+}
+
+.featured-doc-plate {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  padding: 0.9rem 1.15rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.featured-plate-title {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.featured-plate-sub {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #637768;
+  margin-top: 3px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .featured-doc-card {
+    grid-template-columns: 1fr;
+  }
+  .featured-doc-right {
+    order: -1;
+  }
+}

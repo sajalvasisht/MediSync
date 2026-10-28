@@ -1,0 +1,417 @@
+/* ============================================================
+   Patient Dashboard Styles
+   ============================================================ */
+
+.patient-dash-page {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  padding: calc(var(--nav-height) + 2.5rem) var(--container-padding) var(--space-20);
+}
+
+.patient-dash-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+/* ── Hero Banner ─────────────────────────────────────────── */
+
+.dash-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.dash-badge {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-2);
+}
+
+.dash-title {
+  font-size: clamp(2rem, 3.8vw, 2.8rem);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.dash-subtitle {
+  font-size: 0.95rem;
+  color: #556758;
+  margin-top: 4px;
+  max-width: 580px;
+}
+
+.dash-stats-bar {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.dash-stat-chip {
+  background: #ffffff;
+  border: 1px solid var(--color-border-light);
+  border-radius: 20px;
+  padding: 0.85rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 16px rgba(28, 36, 32, 0.04);
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.stat-name {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: #7b9180;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* ── Tabs Navigation ─────────────────────────────────────── */
+
+.dash-nav-pills {
+  display: flex;
+  gap: var(--space-2);
+  background: #eef2ec;
+  padding: 5px;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.dash-pill-btn {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #556758;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dash-pill-btn.is-active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(28, 36, 32, 0.15);
+}
+
+/* ── Appointments List ───────────────────────────────────── */
+
+.dash-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.apt-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid rgba(212, 221, 213, 0.7);
+  box-shadow: 0 8px 30px rgba(28, 36, 32, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.apt-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eef7f0;
+  color: #276a3a;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.apt-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: #3b8c4e;
+  animation: pulse-dot 2s infinite;
+}
+
+.apt-doctor-name {
+  font-size: 1.45rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.apt-specialty-badge {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #6a8c71;
+  margin-top: 3px;
+}
+
+.apt-time-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #556758;
+  margin-top: 8px;
+}
+
+.apt-join-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(28, 36, 32, 0.18);
+  transition: all 0.2s;
+}
+
+.apt-join-btn:hover {
+  background-color: #2b3930;
+  transform: translateY(-2px);
+}
+
+/* ── Records Vault ───────────────────────────────────────── */
+
+.vault-actions-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.vault-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vault-upload-btn:hover {
+  background-color: #2b3930;
+}
+
+.vault-security-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #7b9180;
+}
+
+.vault-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-4);
+}
+
+.vault-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 1.35rem;
+  border: 1px solid rgba(212, 221, 213, 0.7);
+  box-shadow: 0 6px 20px rgba(28, 36, 32, 0.03);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.vault-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: #eef3ef;
+  color: #4f6e55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.vault-meta {
+  flex: 1;
+}
+
+.vault-type-badge {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: #7b9180;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.vault-doc-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 2px;
+}
+
+.vault-doc-date {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #6a7c6f;
+  margin-top: 2px;
+}
+
+.vault-dl-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: #f7f9f6;
+  border: 1px solid var(--color-border-light);
+  color: #556758;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vault-dl-btn:hover {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+/* ── Prescriptions ───────────────────────────────────────── */
+
+.rx-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: var(--space-6);
+}
+
+.rx-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 1.75rem;
+  border: 1px solid rgba(212, 221, 213, 0.7);
+  box-shadow: 0 8px 24px rgba(28, 36, 32, 0.04);
+}
+
+.rx-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border-light);
+  margin-bottom: var(--space-4);
+}
+
+.rx-badge {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  color: #3b8c4e;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.rx-doctor-name {
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 2px;
+}
+
+.rx-date {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #7b9180;
+}
+
+.rx-download-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #4f6e55;
+  background: #eef5ef;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+.rx-meds-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.rx-med-item {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  background: #fbfcfb;
+  border: 1px solid var(--color-border-light);
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+}
+
+.rx-check {
+  color: #3b8c4e;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.rx-med-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.rx-med-detail {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #637768;
+}
+
+@media (max-width: 640px) {
+  .rx-grid {
+    grid-template-columns: 1fr;
+  }
+}

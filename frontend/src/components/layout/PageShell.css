@@ -1,0 +1,15 @@
+/* ============================================================
+   PageShell — root layout
+   ============================================================ */
+
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+}
+
+.page-shell__main {
+  flex: 1;
+  outline: none;
+}

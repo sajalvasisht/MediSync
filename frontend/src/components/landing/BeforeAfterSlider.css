@@ -1,0 +1,321 @@
+/* ============================================================
+   BeforeAfterSlider Styles — matching screenshot 2 pixel-faithfully
+   ============================================================ */
+
+.results-section {
+  padding: var(--space-16) var(--container-padding) var(--space-24);
+  background-color: var(--color-bg);
+}
+
+.results-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+/* ── Section Header ──────────────────────────────────────── */
+
+.results-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--space-12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.results-eyebrow {
+  margin-bottom: var(--space-4);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  padding: 0.35rem 0.9rem;
+  background: rgba(220, 232, 222, 0.7);
+  border: 1px solid rgba(186, 203, 191, 0.5);
+}
+
+.results-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+}
+
+.results-subtitle {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #617366;
+  margin-bottom: var(--space-8);
+}
+
+.results-tabs {
+  margin-top: var(--space-2);
+}
+
+/* ── Case Study Card ─────────────────────────────────────── */
+
+.case-study-card {
+  background: #ffffff;
+  border-radius: 32px;
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  border: 1px solid rgba(212, 221, 213, 0.7);
+  box-shadow: 0 16px 45px rgba(28, 36, 32, 0.06);
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-10);
+  align-items: center;
+}
+
+/* ── Comparer Box ────────────────────────────────────────── */
+
+.comparer-container {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: ew-resize;
+  user-select: none;
+  box-shadow: 0 10px 30px rgba(28, 36, 32, 0.08);
+  border: 1px solid rgba(186, 203, 191, 0.4);
+}
+
+.comparer-container:focus-visible {
+  outline: 3px solid var(--color-sage);
+}
+
+.comparer-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.comparer-visual-graphic {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.comparer-art-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 60% 40%, rgba(255,255,255,0.4) 0%, transparent 65%),
+                    repeating-linear-gradient(45deg, rgba(255,255,255,0.06) 0, rgba(255,255,255,0.06) 2px, transparent 0, transparent 16px);
+  pointer-events: none;
+}
+
+.comparer-art-pattern--before {
+  background-image: radial-gradient(circle at 40% 60%, rgba(0,0,0,0.05) 0%, transparent 65%),
+                    repeating-linear-gradient(-45deg, rgba(0,0,0,0.03) 0, rgba(0,0,0,0.03) 2px, transparent 0, transparent 16px);
+}
+
+.comparer-state-badge {
+  position: relative;
+  z-index: 2;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+}
+
+.comparer-state-badge--after {
+  background: rgba(255, 255, 255, 0.88);
+  color: #27402d;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.comparer-state-badge--before {
+  background: rgba(28, 36, 32, 0.82);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.comparer-metric-chip {
+  position: relative;
+  z-index: 2;
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: #2f4534;
+}
+
+.comparer-chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: #3a8c4e;
+}
+
+.comparer-metric-chip--before {
+  background: rgba(28, 36, 32, 0.75);
+  color: #ffffff;
+}
+
+/* ── Divider & Handle ────────────────────────────────────── */
+
+.comparer-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comparer-handle-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+}
+
+.comparer-handle-pill {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  border: 2px solid var(--color-sage-light);
+  position: relative;
+  z-index: 2;
+}
+
+.comparer-arrows {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+/* ── Case Study Details ──────────────────────────────────── */
+
+.case-study-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.case-study-eyebrow {
+  margin-bottom: var(--space-4);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  padding: 0.3rem 0.8rem;
+}
+
+.case-study-title {
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.25;
+  margin-bottom: var(--space-3);
+}
+
+.case-study-subtitle {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #556758;
+  margin-bottom: var(--space-6);
+}
+
+.case-study-stats {
+  width: 100%;
+  background: #f7f9f6;
+  border: 1px solid var(--color-border-light);
+  border-radius: 18px;
+  padding: 1.15rem 1.35rem;
+  margin-bottom: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.case-study-stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  border-bottom: 1px dashed rgba(186, 203, 191, 0.4);
+  padding-bottom: var(--space-2);
+}
+
+.case-study-stat-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.case-study-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #637768;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.case-study-stat-values {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.case-study-stat-before {
+  color: #8c5353;
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+.case-study-stat-arrow {
+  color: #6b8f71;
+}
+
+.case-study-stat-after {
+  color: #2e663a;
+  font-weight: 700;
+}
+
+.case-study-desc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #5d6d60;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .case-study-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  .comparer-container {
+    height: 300px;
+  }
+}

@@ -1,0 +1,62 @@
+/* ============================================================
+   Badge Component Styles
+   ============================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* ── Variants ────────────────────────────────────────────── */
+
+.badge--default {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-muted);
+  border-color: var(--color-border-light);
+}
+
+.badge--sage {
+  background: var(--color-sage-pale);
+  color: var(--color-badge-new-text);
+  border-color: var(--color-border);
+}
+
+.badge--primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.badge--outline {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+}
+
+/* ── Dot indicator ───────────────────────────────────────── */
+
+.badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.badge--sage .badge__dot {
+  background-color: var(--color-sage);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.badge--default .badge__dot {
+  background-color: var(--color-text-muted);
+}

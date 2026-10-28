@@ -1,0 +1,411 @@
+/* ============================================================
+   Doctor Profile & Slot Picker Styles
+   ============================================================ */
+
+.doc-profile-page {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  padding: calc(var(--nav-height) + 2rem) var(--container-padding) var(--space-20);
+}
+
+.doc-profile-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.doc-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #637768;
+  text-decoration: none;
+  margin-bottom: var(--space-6);
+  transition: color 0.2s;
+}
+
+.doc-back-link:hover {
+  color: var(--color-primary);
+}
+
+.doc-profile-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+/* ── Left Profile Details ────────────────────────────────── */
+
+.doc-profile-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.doc-profile-hero-card {
+  background: #ffffff;
+  border-radius: 32px;
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  border: 1px solid rgba(212, 221, 213, 0.7);
+  box-shadow: 0 10px 35px rgba(28, 36, 32, 0.05);
+}
+
+.profile-hero-top {
+  display: flex;
+  gap: var(--space-6);
+  align-items: flex-start;
+  margin-bottom: var(--space-6);
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #1C2420 0%, #34483a 100%);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(28, 36, 32, 0.2);
+}
+
+.profile-hero-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-spec-badge {
+  align-self: flex-start;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-2);
+}
+
+.profile-name {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.profile-hosp {
+  font-size: 0.88rem;
+  color: #5c6e61;
+  margin-top: 4px;
+}
+
+.profile-rating-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: 8px;
+}
+
+.profile-reviews-count {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #7b9180;
+}
+
+.profile-quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.quick-stat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.stat-icon {
+  color: var(--color-sage);
+}
+
+.stat-val {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.stat-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: #7b9180;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Sections */
+.profile-section-card {
+  background: #ffffff;
+  border-radius: 32px;
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  border: 1px solid rgba(212, 221, 213, 0.7);
+  box-shadow: 0 10px 35px rgba(28, 36, 32, 0.05);
+}
+
+.section-card-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.section-card-text {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #546657;
+}
+
+.consult-guarantee {
+  margin-top: var(--space-6);
+  background: #f4f8f5;
+  border: 1px solid rgba(186, 203, 191, 0.6);
+  border-radius: 20px;
+  padding: 1.25rem;
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.guarantee-icon {
+  color: #3b8c4e;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.guarantee-title {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 3px;
+}
+
+.guarantee-desc {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #556758;
+}
+
+/* ── Right Slot Picker Sidebar ───────────────────────────── */
+
+.slot-picker-card {
+  background: #ffffff;
+  border-radius: 32px;
+  padding: clamp(1.75rem, 3.5vw, 2.25rem);
+  border: 1px solid rgba(212, 221, 213, 0.7);
+  box-shadow: 0 14px 40px rgba(28, 36, 32, 0.08);
+  position: sticky;
+  top: calc(var(--nav-height) + 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.slot-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.slot-picker-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.slot-fee-pill {
+  background: #eef5ef;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  color: #3b6b47;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.slot-fee-pill strong {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+}
+
+.picker-step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.picker-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5d6f62;
+  font-weight: 600;
+}
+
+/* Date Chips */
+.date-chips-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.date-chip {
+  background: #fbfcfb;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 0.65rem 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: all 0.2s;
+}
+
+.date-chip:hover {
+  border-color: var(--color-sage);
+  background: #ffffff;
+}
+
+.date-chip--active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(28, 36, 32, 0.2);
+}
+
+.date-chip-day {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.date-chip-num {
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+/* Time slots */
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.time-slot-tile {
+  background: #f7f9f6;
+  border: 1px solid var(--color-border-light);
+  border-radius: 12px;
+  padding: 0.6rem 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-primary);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+}
+
+.time-slot-tile:hover {
+  background: #eef3ef;
+  border-color: var(--color-sage);
+}
+
+.time-slot-tile--active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  font-weight: 600;
+}
+
+.slot-selection-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: #edf5ee;
+  border-radius: 12px;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.78rem;
+  color: #274730;
+}
+
+.summary-check {
+  color: #3a8c4e;
+  flex-shrink: 0;
+}
+
+.proceed-book-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(28, 36, 32, 0.2);
+  transition: all 0.2s;
+}
+
+.proceed-book-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.proceed-book-btn:hover:not(:disabled) {
+  background-color: #2b3930;
+  transform: translateY(-2px);
+}
+
+.slot-instant-note {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  color: #7b9180;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .doc-profile-grid {
+    grid-template-columns: 1fr;
+  }
+  .slot-picker-card {
+    position: static;
+  }
+}

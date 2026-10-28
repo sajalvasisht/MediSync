@@ -1,0 +1,338 @@
+/* ============================================================
+   Doctor Dashboard Styles
+   ============================================================ */
+
+.doc-dash-page {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  padding: calc(var(--nav-height) + 2.5rem) var(--container-padding) var(--space-20);
+}
+
+.doc-dash-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.doc-dash-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.doc-dash-badge {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-2);
+}
+
+.doc-dash-title {
+  font-size: clamp(2rem, 3.8vw, 2.8rem);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.doc-dash-subtitle {
+  font-size: 0.95rem;
+  color: #556758;
+  margin-top: 4px;
+  max-width: 580px;
+}
+
+.doc-metrics-row {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.doc-metric-tile {
+  background: #ffffff;
+  border: 1px solid var(--color-border-light);
+  border-radius: 20px;
+  padding: 0.85rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 16px rgba(28, 36, 32, 0.04);
+}
+
+.metric-num {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.metric-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: #7b9180;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Tabs */
+.doc-dash-tabs {
+  display: flex;
+  gap: var(--space-2);
+  background: #eef2ec;
+  padding: 5px;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.doc-tab-btn {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #556758;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.doc-tab-btn.is-active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(28, 36, 32, 0.15);
+}
+
+/* Queue List */
+.queue-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.queue-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid rgba(212, 221, 213, 0.7);
+  box-shadow: 0 8px 30px rgba(28, 36, 32, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.queue-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fdf5ea;
+  color: #8c5e27;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.queue-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: #d9822b;
+  animation: pulse-dot 2s infinite;
+}
+
+.queue-patient-name {
+  font-size: 1.45rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.queue-patient-concern {
+  font-size: 0.84rem;
+  color: #5c6e61;
+  margin-top: 3px;
+}
+
+.queue-time-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #556758;
+  margin-top: 8px;
+}
+
+.queue-start-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(28, 36, 32, 0.18);
+  transition: all 0.2s;
+}
+
+.queue-start-btn:hover {
+  background-color: #2b3930;
+  transform: translateY(-2px);
+}
+
+/* Availability Builder Card */
+.builder-card {
+  background: #ffffff;
+  border-radius: 32px;
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  border: 1px solid rgba(212, 221, 213, 0.7);
+  box-shadow: 0 10px 35px rgba(28, 36, 32, 0.05);
+}
+
+.builder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.builder-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.builder-sub {
+  font-size: 0.88rem;
+  color: #5c6e61;
+  margin-top: 2px;
+}
+
+.add-slot-form {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.add-slot-input {
+  background: #fbfcfb;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  outline: none;
+}
+
+.add-slot-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.slots-editor-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.slot-editor-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f4f8f5;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-pill);
+  padding: 0.5rem 0.95rem;
+}
+
+.slot-pill-time {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.slot-delete-btn {
+  background: none;
+  border: none;
+  color: #a84646;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* History Card */
+.history-table-card {
+  background: #ffffff;
+  border-radius: 32px;
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  border: 1px solid rgba(212, 221, 213, 0.7);
+  box-shadow: 0 10px 35px rgba(28, 36, 32, 0.05);
+}
+
+.history-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-6);
+}
+
+.history-rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.history-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  background: #fbfcfb;
+  border: 1px solid var(--color-border-light);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.history-patient {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.history-date {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #7b9180;
+}
+
+.history-outcome {
+  font-size: 0.84rem;
+  color: #3b6b47;
+  font-weight: 500;
+}

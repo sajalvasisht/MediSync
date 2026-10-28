@@ -1,0 +1,39 @@
+/* ============================================================
+   Rating Component Styles
+   ============================================================ */
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.rating__stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.rating__star {
+  color: var(--color-star-empty);
+  fill: var(--color-star-empty);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.rating__star--filled {
+  color: var(--color-star);
+  fill: var(--color-star);
+}
+
+/* Sizes */
+.rating--sm .rating__star  { width: 12px; height: 12px; }
+.rating--md .rating__star  { width: 14px; height: 14px; }
+.rating--lg .rating__star  { width: 18px; height: 18px; }
+
+.rating__value {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-wide);
+}
