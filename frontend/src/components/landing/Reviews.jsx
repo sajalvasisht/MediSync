@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, MessageSquarePlus, CheckCircle2 } from 'lucide-react';
 import Rating from '../common/Rating';
 import initialTestimonials from '../../data/testimonials';
+import { getReviews, submitReview } from '../../services/api';
 import './Reviews.css';
 
 const Reviews = () => {
@@ -15,26 +16,39 @@ const Reviews = () => {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    let isMounted = true;
+    getReviews()
+      .then((data) => {
+        if (isMounted && Array.isArray(data) && data.length > 0) {
+          setReviewsList(data);
+        }
+      })
+      .catch((err) => console.warn('Could not fetch reviews:', err));
+    return () => { isMounted = false; };
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name.trim() || !formData.text.trim()) return;
 
-    const newReview = {
-      id: Date.now(),
-      name: formData.name,
-      location: 'Verified Patient',
-      specialty: formData.specialty || 'General Consultation',
-      rating: formData.rating,
-      text: formData.text,
-      date: new Date().toISOString().split('T')[0],
-    };
+    try {
+      const created = await submitReview({
+        name: formData.name,
+        specialty: formData.specialty || 'General Consultation',
+        rating: formData.rating,
+        text: formData.text,
+      });
 
-    setReviewsList([newReview, ...reviewsList]);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', specialty: '', rating: 5, text: '' });
-    }, 3500);
+      setReviewsList(prev => [created, ...prev]);
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({ name: '', specialty: '', rating: 5, text: '' });
+      }, 3500);
+    } catch (err) {
+      console.error('Failed to submit review:', err);
+    }
   };
 
   return (

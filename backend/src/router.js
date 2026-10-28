@@ -7,6 +7,12 @@ const {
   handleHealth,
   handleGetDoctors,
   handleGetDoctor,
+  handleGetAppointments,
+  handleCreateAppointment,
+  handleGetReviews,
+  handleCreateReview,
+  handleGetDoctorSlots,
+  handleBookDoctorSlot,
 } = require('./handlers/index');
 
 /**
@@ -17,11 +23,24 @@ const {
  *   handler - function(req, res, params, searchParams)
  */
 const routes = [
-  { method: 'GET', pattern: '/',            handler: handleRoot },
-  { method: 'GET', pattern: '/api/health',  handler: handleHealth },
-  // /api/doctors/:id  — must come before /api/doctors so the more-specific path matches first
-  { method: 'GET', pattern: /^\/api\/doctors\/(?<id>[^/]+)$/, handler: handleGetDoctor },
-  { method: 'GET', pattern: '/api/doctors', handler: handleGetDoctors },
+  { method: 'GET',  pattern: '/',            handler: handleRoot },
+  { method: 'GET',  pattern: '/api/health',  handler: handleHealth },
+
+  // Appointments API
+  { method: 'GET',  pattern: '/api/appointments', handler: handleGetAppointments },
+  { method: 'POST', pattern: '/api/appointments', handler: handleCreateAppointment },
+
+  // Reviews API
+  { method: 'GET',  pattern: '/api/reviews', handler: handleGetReviews },
+  { method: 'POST', pattern: '/api/reviews', handler: handleCreateReview },
+
+  // Slots API (more specific doctor routes first)
+  { method: 'POST', pattern: /^\/api\/doctors\/(?<id>[^/]+)\/slots\/book$/, handler: handleBookDoctorSlot },
+  { method: 'GET',  pattern: /^\/api\/doctors\/(?<id>[^/]+)\/slots$/,      handler: handleGetDoctorSlots },
+
+  // Doctors API
+  { method: 'GET',  pattern: /^\/api\/doctors\/(?<id>[^/]+)$/, handler: handleGetDoctor },
+  { method: 'GET',  pattern: '/api/doctors', handler: handleGetDoctors },
 ];
 
 /**

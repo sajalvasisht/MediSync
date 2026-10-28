@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Video, ChevronRight, Shield, Star } from 'lucide-react';
 import Badge from '../common/Badge';
 import brand from '../../config/brand';
+import heroTeleconsultImg from '../../assets/hero/hero-teleconsult.jpg';
 import './Hero.css';
 
 const AVATAR_COLORS = ['#1C2420', '#6B8F71', '#3A6644'];
@@ -118,8 +119,17 @@ const Hero = () => (
             <div className="hero__phone-gradient" />
             {/* Simulated consult UI */}
             <div className="hero__phone-content">
-              <div className="hero__phone-video-1" />
-              <div className="hero__phone-video-2" />
+              <div className="hero__phone-video-1">
+                <img
+                  src={heroTeleconsultImg}
+                  alt="Doctor teleconsultation session"
+                  className="hero__phone-consult-img"
+                />
+                <span className="hero__phone-live-badge">LIVE CONSULT HD</span>
+              </div>
+              <div className="hero__phone-video-2">
+                <div className="hero__phone-pip-inner" />
+              </div>
               <div className="hero__phone-controls">
                 <div className="hero__phone-ctrl" />
                 <div className="hero__phone-ctrl hero__phone-ctrl--red" />

@@ -16,6 +16,7 @@ const DoctorProfilePage = () => {
   const availableDates = Object.keys(doctorSlots);
   const [selectedDate, setSelectedDate] = useState(availableDates[0] || '2026-10-29');
   const [selectedTime, setSelectedTime] = useState(doctorSlots[selectedDate]?.[0] || '');
+  const [imgFailed, setImgFailed] = useState(false);
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -42,7 +43,16 @@ const DoctorProfilePage = () => {
             <div className="doc-profile-hero-card">
               <div className="profile-hero-top">
                 <div className="profile-avatar">
-                  {doctor.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                  {doctor.avatar && !imgFailed ? (
+                    <img
+                      src={doctor.avatar}
+                      alt={doctor.name}
+                      className="profile-avatar-img"
+                      onError={() => setImgFailed(true)}
+                    />
+                  ) : (
+                    <span>{doctor.name.split(' ').map(n => n[0]).join('').slice(0, 2)}</span>
+                  )}
                 </div>
                 <div className="profile-hero-meta">
                   <Badge variant="sage" className="profile-spec-badge">

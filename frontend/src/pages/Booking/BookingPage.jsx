@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useSearchParams, Link, useNavigate } from 'react-router-dom';
 import { ShieldCheck, Video, CreditCard, QrCode, Building, CheckCircle2, Calendar, Clock, ArrowRight } from 'lucide-react';
 import doctors from '../../data/doctors';
+import { createAppointment, bookDoctorSlot } from '../../services/api';
 import Badge from '../../components/common/Badge';
 import './BookingPage.css';
 
@@ -27,21 +28,54 @@ const BookingPage = () => {
   });
 
   const [confirmedBooking, setConfirmedBooking] = useState(null);
+  const [imgFailed, setImgFailed] = useState(false);
 
-  const handleConfirm = (e) => {
+  const handleConfirm = async (e) => {
     e.preventDefault();
     if (!formData.patientName || !formData.email || !formData.phone) return;
 
-    const roomId = `room-${Math.random().toString(36).substring(2, 9)}`;
-    setConfirmedBooking({
-      id: `BK-${Math.floor(100000 + Math.random() * 900000)}`,
-      roomId,
-      doctor,
-      date,
-      time,
-      patientName: formData.patientName,
-      fee: doctor.fee,
-    });
+    try {
+      const booked = await createAppointment({
+        doctor: doctor.name,
+        doctorId: doctor.id,
+        specialty: doctor.specialty,
+        hospital: doctor.hospital,
+        date: `${date} at ${time}`,
+        time,
+        patientName: formData.patientName,
+        email: formData.email,
+        phone: formData.phone,
+        fee: doctor.fee,
+      });
+
+      try {
+        await bookDoctorSlot(doctor.id, { date, slot: time });
+      } catch (slotErr) {
+        console.warn('Slot booking notice:', slotErr);
+      }
+
+      setConfirmedBooking({
+        id: booked.id,
+        roomId: booked.roomId,
+        doctor,
+        date,
+        time,
+        patientName: formData.patientName,
+        fee: doctor.fee,
+      });
+    } catch (err) {
+      console.error('Failed to book appointment via API:', err);
+      const roomId = `room-${Math.random().toString(36).substring(2, 9)}`;
+      setConfirmedBooking({
+        id: `BK-${Math.floor(100000 + Math.random() * 900000)}`,
+        roomId,
+        doctor,
+        date,
+        time,
+        patientName: formData.patientName,
+        fee: doctor.fee,
+      });
+    }
   };
 
   return (
@@ -221,7 +255,16 @@ const BookingPage = () => {
 
                 <div className="summary-doc-brief">
                   <div className="summary-avatar">
-                    {doctor.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                    {doctor.avatar && !imgFailed ? (
+                      <img
+                        src={doctor.avatar}
+                        alt={doctor.name}
+                        className="summary-avatar-img"
+                        onError={() => setImgFailed(true)}
+                      />
+                    ) : (
+                      <span>{doctor.name.split(' ').map(n => n[0]).join('').slice(0, 2)}</span>
+                    )}
                   </div>
                   <div>
                     <h3 className="summary-doc-name">{doctor.name}</h3>

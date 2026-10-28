@@ -1,4 +1,10 @@
 /** Case studies for the Before/After Results section */
+import hypertensionBefore from '../assets/case-studies/hypertension-before.jpg';
+import hypertensionAfter from '../assets/case-studies/hypertension-after.jpg';
+import acneBefore from '../assets/case-studies/acne-before.jpg';
+import acneAfter from '../assets/case-studies/acne-after.jpg';
+import anxietyBefore from '../assets/case-studies/anxiety-before.jpg';
+import anxietyAfter from '../assets/case-studies/anxiety-after.jpg';
 
 const caseStudies = [
   {
@@ -9,7 +15,8 @@ const caseStudies = [
     subtitle: 'Patient treated using MediSync continuous monitoring, e-prescription, and weekly video follow-ups with Dr. Sharma.',
     beforeLabel: 'Week 1 — Before',
     afterLabel: 'Week 8 — After',
-    // Using gradient placeholders in place of real images
+    beforeImage: hypertensionBefore,
+    afterImage: hypertensionAfter,
     beforeColor: '#c8d8c8',
     afterColor: '#a8c4b0',
     stats: [
@@ -27,6 +34,8 @@ const caseStudies = [
     subtitle: 'Patient treated using photographic skin assessment, AI-assisted tracking, and e-prescription by Dr. Mehta.',
     beforeLabel: 'Week 1 — Before',
     afterLabel: 'Week 12 — After',
+    beforeImage: acneBefore,
+    afterImage: acneAfter,
     beforeColor: '#d4c4b8',
     afterColor: '#c8d8c8',
     stats: [
@@ -44,6 +53,8 @@ const caseStudies = [
     subtitle: 'Structured 6-session CBT programme conducted via MediSync video calls with Dr. Pillai.',
     beforeLabel: 'Session 1',
     afterLabel: 'Session 6',
+    beforeImage: anxietyBefore,
+    afterImage: anxietyAfter,
     beforeColor: '#d0c8d8',
     afterColor: '#b8d4c8',
     stats: [

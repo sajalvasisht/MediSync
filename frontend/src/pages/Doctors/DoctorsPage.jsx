@@ -21,6 +21,26 @@ const SPECIALTIES = [
 const CITIES = ['All', 'Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Hyderabad', 'Kochi', 'Pune'];
 const LANGUAGES = ['All', 'English', 'Hindi', 'Marathi', 'Tamil', 'Telugu', 'Kannada', 'Malayalam'];
 
+const DoctorAvatar = ({ avatar, name }) => {
+  const [imgFailed, setImgFailed] = useState(false);
+  const initials = name ? name.split(' ').map(n => n[0]).join('').slice(0, 2) : 'DR';
+
+  return (
+    <div className="doc-avatar">
+      {avatar && !imgFailed ? (
+        <img
+          src={avatar}
+          alt={name}
+          className="doc-avatar-img"
+          onError={() => setImgFailed(true)}
+        />
+      ) : (
+        <span>{initials}</span>
+      )}
+    </div>
+  );
+};
+
 const DoctorsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialSpecialty = searchParams.get('specialty') || 'All';
@@ -222,9 +242,7 @@ const DoctorsPage = () => {
               {filteredDoctors.map((doc) => (
                 <div key={doc.id} className="doctor-card">
                   <div className="doc-card-top">
-                    <div className="doc-avatar">
-                      {doc.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
-                    </div>
+                    <DoctorAvatar avatar={doc.avatar} name={doc.name} />
                     <div className="doc-meta">
                       <span className="doc-specialty-tag">{doc.specialty}</span>
                       <h3 className="doc-name text-display">{doc.name}</h3>

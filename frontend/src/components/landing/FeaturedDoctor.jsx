@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Award, Clock, Calendar, Star, ShieldCheck, ArrowRight } from 'lucide-react';
@@ -8,6 +8,7 @@ import './FeaturedDoctor.css';
 
 const FeaturedDoctor = () => {
   const featured = doctors[0]; // Dr. Priya Sharma
+  const [imgError, setImgError] = useState(false);
 
   return (
     <section className="featured-doc-section" id="doctors" aria-label="Featured Chief Specialist">
@@ -74,7 +75,16 @@ const FeaturedDoctor = () => {
           <div className="featured-doc-right">
             <div className="featured-doc-portrait">
               <div className="featured-doc-portrait-art">
-                <div className="featured-doc-initials">PS</div>
+                {featured.avatar && !imgError ? (
+                  <img
+                    src={featured.avatar}
+                    alt={featured.name}
+                    className="featured-doc-img"
+                    onError={() => setImgError(true)}
+                  />
+                ) : (
+                  <div className="featured-doc-initials">PS</div>
+                )}
               </div>
 
               {/* Floating verified badge */}

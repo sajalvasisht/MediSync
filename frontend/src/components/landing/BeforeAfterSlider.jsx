@@ -96,12 +96,13 @@ const BeforeAfterSlider = () => {
               }}
             >
               {/* "After" Layer (Background base) */}
-              <div
-                className="comparer-layer comparer-layer--after"
-                style={{
-                  background: `linear-gradient(135deg, ${activeCase.afterColor} 0%, #d8e5db 100%)`,
-                }}
-              >
+              <div className="comparer-layer comparer-layer--after">
+                <img
+                  src={activeCase.afterImage}
+                  alt={activeCase.afterLabel}
+                  className="comparer-layer-img"
+                />
+                <div className="comparer-overlay-scrim" />
                 <div className="comparer-visual-graphic">
                   <div className="comparer-state-badge comparer-state-badge--after">
                     {activeCase.afterLabel}
@@ -110,7 +111,6 @@ const BeforeAfterSlider = () => {
                     <span className="comparer-chip-dot" />
                     <span>RESTORED HEALTH</span>
                   </div>
-                  <div className="comparer-art-pattern" />
                 </div>
               </div>
 
@@ -119,9 +119,14 @@ const BeforeAfterSlider = () => {
                 className="comparer-layer comparer-layer--before"
                 style={{
                   clipPath: `inset(0 ${100 - sliderPos}% 0 0)`,
-                  background: `linear-gradient(135deg, ${activeCase.beforeColor} 0%, #c4cfc6 100%)`,
                 }}
               >
+                <img
+                  src={activeCase.beforeImage}
+                  alt={activeCase.beforeLabel}
+                  className="comparer-layer-img"
+                />
+                <div className="comparer-overlay-scrim" />
                 <div className="comparer-visual-graphic">
                   <div className="comparer-state-badge comparer-state-badge--before">
                     {activeCase.beforeLabel}
@@ -129,7 +134,6 @@ const BeforeAfterSlider = () => {
                   <div className="comparer-metric-chip comparer-metric-chip--before">
                     <span>BASELINE CLINICAL STATE</span>
                   </div>
-                  <div className="comparer-art-pattern comparer-art-pattern--before" />
                 </div>
               </div>
 

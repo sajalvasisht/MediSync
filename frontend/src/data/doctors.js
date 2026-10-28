@@ -2,6 +2,14 @@
  * Mock doctors data — mirrors backend/src/data/doctors.js
  * Keep fields in sync when the real API is wired up.
  */
+import doc1 from '../assets/doctors/doctor-1.jpg';
+import doc2 from '../assets/doctors/doctor-2.jpg';
+import doc3 from '../assets/doctors/doctor-3.jpg';
+import doc4 from '../assets/doctors/doctor-4.jpg';
+import doc5 from '../assets/doctors/doctor-5.jpg';
+import doc6 from '../assets/doctors/doctor-6.jpg';
+import doc7 from '../assets/doctors/doctor-7.jpg';
+import doc8 from '../assets/doctors/doctor-8.jpg';
 
 const doctors = [
   {
@@ -18,7 +26,7 @@ const doctors = [
     yearsExp: 18,
     education: 'MBBS, MD (Cardiology) – AIIMS New Delhi; Fellowship – Cleveland Clinic, USA',
     hospital: 'Kokilaben Dhirubhai Ambani Hospital, Mumbai',
-    avatar: null,
+    avatar: doc1,
     available: true,
     consultType: ['Video', 'Audio', 'Chat'],
   },
@@ -36,7 +44,7 @@ const doctors = [
     yearsExp: 12,
     education: 'MBBS, MD (Dermatology) – Maulana Azad Medical College, Delhi',
     hospital: 'Sir Ganga Ram Hospital, Delhi',
-    avatar: null,
+    avatar: doc2,
     available: true,
     consultType: ['Video', 'Chat'],
   },
@@ -54,7 +62,7 @@ const doctors = [
     yearsExp: 15,
     education: 'MBBS, MD (Pediatrics) – St. John\'s Medical College, Bangalore',
     hospital: 'Manipal Hospital, Bangalore',
-    avatar: null,
+    avatar: doc3,
     available: true,
     consultType: ['Video', 'Audio', 'Chat'],
   },
@@ -72,7 +80,7 @@ const doctors = [
     yearsExp: 20,
     education: 'MBBS, MS (Orthopedics) – Madras Medical College; Fellowship – Royal College of Surgeons, Edinburgh',
     hospital: 'Apollo Hospital, Chennai',
-    avatar: null,
+    avatar: doc4,
     available: false,
     consultType: ['Video'],
   },
@@ -90,7 +98,7 @@ const doctors = [
     yearsExp: 22,
     education: 'MBBS, MD (OB-GYN) – Osmania Medical College, Hyderabad',
     hospital: 'KIMS Hospital, Hyderabad',
-    avatar: null,
+    avatar: doc5,
     available: true,
     consultType: ['Video', 'Audio', 'Chat'],
   },
@@ -108,7 +116,7 @@ const doctors = [
     yearsExp: 25,
     education: 'MBBS, DM (Neurology) – KEM Hospital, Mumbai; Fellowship – Johns Hopkins University',
     hospital: 'Lilavati Hospital, Mumbai',
-    avatar: null,
+    avatar: doc6,
     available: true,
     consultType: ['Video', 'Chat'],
   },
@@ -126,7 +134,7 @@ const doctors = [
     yearsExp: 16,
     education: 'MBBS, MD (Psychiatry) – Medical College, Trivandrum',
     hospital: 'Amrita Institute of Medical Sciences, Kochi',
-    avatar: null,
+    avatar: doc7,
     available: true,
     consultType: ['Video', 'Audio', 'Chat'],
   },
@@ -144,7 +152,7 @@ const doctors = [
     yearsExp: 14,
     education: 'MBBS, MD (Internal Medicine) – BJ Medical College, Pune',
     hospital: 'Ruby Hall Clinic, Pune',
-    avatar: null,
+    avatar: doc8,
     available: true,
     consultType: ['Video', 'Audio', 'Chat'],
   },
