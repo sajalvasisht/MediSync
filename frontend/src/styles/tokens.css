@@ -1,59 +1,64 @@
 /* ============================================================
-   MediSync Design Tokens
+   MediSync Design Tokens — Vibrant & Youthful
    ============================================================ */
 
 :root {
   /* ── Colors ─────────────────────────────────────────────── */
 
   /* Backgrounds */
-  --color-bg: #F7F8F4;
-  --color-bg-secondary: #EEF0EA;
-  --color-bg-tertiary: #E4E9E5;
+  --color-bg: #F6F7FF;
+  --color-bg-secondary: #EEF0FF;
+  --color-bg-tertiary: #E4E9FF;
 
   /* Brand */
-  --color-primary: #1C2420;
-  --color-primary-hover: #2C3830;
-  --color-sage: #6B8F71;
-  --color-sage-hover: #5A7D60;
-  --color-sage-light: #8FAF95;
-  --color-sage-pale: #DCE8DE;
+  --color-primary: #1B1F3B;
+  --color-primary-hover: #2A2F55;
+  --color-sage: #00C2A8;           /* primary accent (teal) */
+  --color-sage-hover: #00A892;
+  --color-sage-light: #5FF3D9;
+  --color-sage-pale: #D9FFF7;
+  --color-accent: #FF6B6B;        /* secondary accent (coral) */
+  --color-accent-hover: #FF5252;
+  --color-accent-soft: #FFE3E3;
+  --color-pop: #7C5CFF;           /* playful pop (violet) */
+  --color-pop-soft: #EDE8FF;
 
   /* Surfaces */
   --color-white: #FFFFFF;
   --color-card: #FFFFFF;
-  --color-overlay: rgba(28, 36, 32, 0.48);
+  --color-overlay: rgba(27, 31, 59, 0.5);
 
   /* Text */
-  --color-text-primary: #1C2420;
-  --color-text-secondary: #5A6B5E;
-  --color-text-muted: #8FA08F;
+  --color-text-primary: #1B1F3B;
+  --color-text-secondary: #4A5578;
+  --color-text-muted: #7A86A8;
   --color-text-inverse: #FFFFFF;
 
   /* Borders */
-  --color-border: #D4DDD5;
-  --color-border-light: #E8EEE9;
-  --color-border-strong: #BACBBF;
+  --color-border: #D7DCF5;
+  --color-border-light: #E8EBFA;
+  --color-border-strong: #B8C0E6;
 
   /* Feedback */
-  --color-success: #3A8C4E;
-  --color-success-bg: #E8F5EC;
-  --color-warning: #C9882A;
-  --color-warning-bg: #FDF3E3;
-  --color-error: #C0392B;
-  --color-error-bg: #FDECEA;
-  --color-info: #2471A3;
-  --color-info-bg: #EBF5FB;
+  --color-success: #00B894;
+  --color-success-bg: #E6FFF8;
+  --color-warning: #FFB020;
+  --color-warning-bg: #FFF4DE;
+  --color-error: #FF4D6D;
+  --color-error-bg: #FFE8EE;
+  --color-info: #3B82F6;
+  --color-info-bg: #EAF2FF;
 
   /* Accents */
-  --color-star: #E8A838;
-  --color-star-empty: #D4DDD5;
-  --color-badge-new: #DCE8DE;
-  --color-badge-new-text: #3A6644;
+  --color-star: #FFB020;
+  --color-star-empty: #D7DCF5;
+  --color-badge-new: #D9FFF7;
+  --color-badge-new-text: #007A6C;
 
   /* ── Typography ─────────────────────────────────────────── */
 
-  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', 'Courier New', Courier, monospace;
 
   /* Font Sizes */
@@ -118,13 +123,13 @@
 
   /* ── Shadows ─────────────────────────────────────────────── */
 
-  --shadow-card: 0 8px 40px rgba(28, 36, 32, 0.08);
-  --shadow-float: 0 20px 60px rgba(28, 36, 32, 0.14);
-  --shadow-nav: 0 4px 24px rgba(28, 36, 32, 0.10);
-  --shadow-sm: 0 2px 8px rgba(28, 36, 32, 0.06);
-  --shadow-btn: 0 4px 16px rgba(28, 36, 32, 0.16);
-  --shadow-btn-sage: 0 4px 20px rgba(107, 143, 113, 0.35);
-  --shadow-inset: inset 0 2px 6px rgba(28, 36, 32, 0.06);
+  --shadow-card: 0 10px 40px rgba(27, 31, 59, 0.10);
+  --shadow-float: 0 24px 60px rgba(27, 31, 59, 0.16);
+  --shadow-nav: 0 8px 28px rgba(27, 31, 59, 0.12);
+  --shadow-sm: 0 2px 10px rgba(27, 31, 59, 0.06);
+  --shadow-btn: 0 6px 18px rgba(27, 31, 59, 0.18);
+  --shadow-btn-sage: 0 8px 24px rgba(0, 194, 168, 0.35);
+  --shadow-inset: inset 0 2px 6px rgba(27, 31, 59, 0.06);
 
   /* ── Transitions ─────────────────────────────────────────── */
 

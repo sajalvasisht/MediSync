@@ -7,7 +7,7 @@ import brand from '../../config/brand';
 import heroTeleconsultImg from '../../assets/hero/hero-teleconsult.jpg';
 import './Hero.css';
 
-const AVATAR_COLORS = ['#1C2420', '#6B8F71', '#3A6644'];
+const AVATAR_COLORS = ['#7C5CFF', '#00C2A8', '#FF6B6B'];
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -131,9 +131,9 @@ const Hero = () => (
                 <div className="hero__phone-pip-inner" />
               </div>
               <div className="hero__phone-controls">
-                <div className="hero__phone-ctrl" />
-                <div className="hero__phone-ctrl hero__phone-ctrl--red" />
-                <div className="hero__phone-ctrl" />
+                <div className="hero__phone-ctrl" aria-hidden="true" />
+                <div className="hero__phone-ctrl hero__phone-ctrl--red" aria-hidden="true" />
+                <div className="hero__phone-ctrl" aria-hidden="true" />
               </div>
             </div>
             {/* Bottom info card */}
@@ -154,22 +154,22 @@ const Hero = () => (
             transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
           >
             <path id="circlePath" d="M60,60 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0" fill="none"/>
-            <text fontSize="10.5" fontFamily="JetBrains Mono, monospace" letterSpacing="4" fill="#1C2420">
+            <text fontSize="10.5" fontFamily="JetBrains Mono, monospace" letterSpacing="4" fill="#1B1F3B">
               <textPath href="#circlePath">MEDISYNC • TELECONSULT • MEDISYNC • </textPath>
             </text>
           </motion.svg>
           <div className="hero__rotate-center">
             <svg width="16" height="16" viewBox="0 0 28 28" fill="none">
-              <circle cx="14" cy="14" r="13" stroke="#1C2420" strokeWidth="1.5"/>
-              <path d="M14 8v12M8 14h12" stroke="#1C2420" strokeWidth="2" strokeLinecap="round"/>
+              <circle cx="14" cy="14" r="13" stroke="#1B1F3B" strokeWidth="1.5"/>
+              <path d="M14 8v12M8 14h12" stroke="#1B1F3B" strokeWidth="2" strokeLinecap="round"/>
             </svg>
           </div>
         </div>
 
         {/* Faint curved lines */}
         <svg className="hero__curve" viewBox="0 0 600 400" fill="none" aria-hidden="true">
-          <path d="M0 200 Q200 80 400 200 T800 200" stroke="#6B8F71" strokeWidth="1" strokeOpacity="0.18" fill="none"/>
-          <path d="M0 250 Q200 130 400 250 T800 250" stroke="#6B8F71" strokeWidth="0.5" strokeOpacity="0.1" fill="none"/>
+          <path d="M0 200 Q200 80 400 200 T800 200" stroke="#00C2A8" strokeWidth="1.2" strokeOpacity="0.22" fill="none"/>
+          <path d="M0 250 Q200 130 400 250 T800 250" stroke="#7C5CFF" strokeWidth="0.8" strokeOpacity="0.16" fill="none"/>
         </svg>
       </motion.div>
     </div>

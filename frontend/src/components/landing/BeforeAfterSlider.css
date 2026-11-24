@@ -102,6 +102,44 @@
   object-fit: cover;
   object-position: center;
   z-index: 1;
+  pointer-events: none;
+}
+
+.comparer-layer-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.comparer-layer-fallback--before {
+  background: linear-gradient(135deg, #dfe7ff 0%, #f7e8ff 100%);
+}
+.comparer-layer-fallback--after {
+  background: linear-gradient(135deg, #d9fff7 0%, #e4fff0 100%);
+}
+
+.comparer-layer--before .comparer-layer-img {
+  filter: saturate(0.88) contrast(0.96) brightness(0.98);
+}
+.comparer-layer--after .comparer-layer-img {
+  filter: saturate(1.06) contrast(1.02);
+}
+
+.comparer-drag-hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 12;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(27, 31, 59, 0.55);
+  backdrop-filter: blur(8px);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-pill);
+  pointer-events: none;
 }
 
 .comparer-overlay-scrim {

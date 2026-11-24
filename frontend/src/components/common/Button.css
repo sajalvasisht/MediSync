@@ -87,7 +87,7 @@
   background-color: var(--color-sage-hover);
   border-color: var(--color-sage-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(107, 143, 113, 0.45);
+  box-shadow: 0 8px 28px rgba(0, 194, 168, 0.45);
 }
 
 .btn--secondary:active:not(:disabled) {

@@ -9,7 +9,12 @@ const BeforeAfterSlider = () => {
   const [activeTab, setActiveTab] = useState(caseStudies[0].id);
   const [sliderPos, setSliderPos] = useState(50); // percentage 0 - 100
   const [isDragging, setIsDragging] = useState(false);
+  const [imgErrors, setImgErrors] = useState({});
   const containerRef = useRef(null);
+
+  const markImgError = (key) => {
+    setImgErrors((prev) => (prev[key] ? prev : { ...prev, [key]: true }));
+  };
 
   const activeCase = caseStudies.find(c => c.id === activeTab) || caseStudies[0];
 
@@ -49,7 +54,7 @@ const BeforeAfterSlider = () => {
             Our Patient Masterpieces
           </h2>
           <p className="results-subtitle">
-            Interact with real patient results using our precision sliding comparer. Witness the biological restoration of nature and health.
+            Drag the slider to compare baseline and progress snapshots from guided telehealth journeys. Each story highlights how consistent virtual care can support meaningful improvements.
           </p>
 
           <Tabs
@@ -97,11 +102,17 @@ const BeforeAfterSlider = () => {
             >
               {/* "After" Layer (Background base) */}
               <div className="comparer-layer comparer-layer--after">
-                <img
-                  src={activeCase.afterImage}
-                  alt={activeCase.afterLabel}
-                  className="comparer-layer-img"
-                />
+                {!imgErrors[`${activeCase.id}-after`] ? (
+                  <img
+                    src={activeCase.afterImage}
+                    alt={activeCase.afterLabel}
+                    className="comparer-layer-img"
+                    draggable={false}
+                    onError={() => markImgError(`${activeCase.id}-after`)}
+                  />
+                ) : (
+                  <div className="comparer-layer-fallback comparer-layer-fallback--after" aria-hidden="true" />
+                )}
                 <div className="comparer-overlay-scrim" />
                 <div className="comparer-visual-graphic">
                   <div className="comparer-state-badge comparer-state-badge--after">
@@ -109,7 +120,7 @@ const BeforeAfterSlider = () => {
                   </div>
                   <div className="comparer-metric-chip">
                     <span className="comparer-chip-dot" />
-                    <span>RESTORED HEALTH</span>
+                    <span>PROGRESS SNAPSHOT</span>
                   </div>
                 </div>
               </div>
@@ -121,18 +132,24 @@ const BeforeAfterSlider = () => {
                   clipPath: `inset(0 ${100 - sliderPos}% 0 0)`,
                 }}
               >
-                <img
-                  src={activeCase.beforeImage}
-                  alt={activeCase.beforeLabel}
-                  className="comparer-layer-img"
-                />
+                {!imgErrors[`${activeCase.id}-before`] ? (
+                  <img
+                    src={activeCase.beforeImage}
+                    alt={activeCase.beforeLabel}
+                    className="comparer-layer-img"
+                    draggable={false}
+                    onError={() => markImgError(`${activeCase.id}-before`)}
+                  />
+                ) : (
+                  <div className="comparer-layer-fallback comparer-layer-fallback--before" aria-hidden="true" />
+                )}
                 <div className="comparer-overlay-scrim" />
                 <div className="comparer-visual-graphic">
                   <div className="comparer-state-badge comparer-state-badge--before">
                     {activeCase.beforeLabel}
                   </div>
                   <div className="comparer-metric-chip comparer-metric-chip--before">
-                    <span>BASELINE CLINICAL STATE</span>
+                    <span>BASELINE SNAPSHOT</span>
                   </div>
                 </div>
               </div>
@@ -147,6 +164,7 @@ const BeforeAfterSlider = () => {
                   <span className="comparer-arrows">‹ ›</span>
                 </div>
               </div>
+              <div className="comparer-drag-hint" aria-hidden="true">Drag to compare</div>
             </div>
 
             {/* Right: Clinical Description & Stats */}

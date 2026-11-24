@@ -6,7 +6,11 @@
   position: relative;
   min-height: 100vh;
   padding: calc(var(--nav-height) + 3.5rem) var(--container-padding) var(--space-20);
-  background: radial-gradient(circle at 75% 35%, rgba(206, 222, 210, 0.45) 0%, rgba(247, 248, 244, 0.6) 45%, var(--color-bg) 80%);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(124, 92, 255, 0.18) 0%, transparent 35%),
+    radial-gradient(circle at 85% 30%, rgba(0, 194, 168, 0.20) 0%, transparent 38%),
+    radial-gradient(circle at 70% 85%, rgba(255, 107, 107, 0.14) 0%, transparent 30%),
+    var(--color-bg);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -24,7 +28,7 @@
 .hero__orbit {
   position: absolute;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(107, 143, 113, 0.12);
+  border: 1px solid rgba(0, 194, 168, 0.18);
   top: 45%;
   left: 70%;
   transform: translate(-50%, -50%);
@@ -39,7 +43,7 @@
   width: 780px;
   height: 780px;
   border-style: dashed;
-  border-color: rgba(107, 143, 113, 0.08);
+  border-color: rgba(124, 92, 255, 0.14);
 }
 
 .hero__orbit--3 {
@@ -72,29 +76,33 @@
   letter-spacing: 0.18em;
   font-size: 0.68rem;
   padding: 0.35rem 0.9rem;
-  background: rgba(220, 232, 222, 0.7);
-  border: 1px solid rgba(186, 203, 191, 0.5);
+  background: linear-gradient(135deg, var(--color-sage-pale), var(--color-pop-soft));
+  border: 1px solid rgba(124, 92, 255, 0.18);
+  color: var(--color-primary);
 }
 
 .hero__headline {
-  font-size: clamp(2.75rem, 5.5vw, 4.4rem);
-  font-weight: 400;
-  font-style: italic;
-  line-height: 1.12;
-  letter-spacing: -0.025em;
+  font-size: clamp(2.75rem, 5.5vw, 4.6rem);
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
   color: var(--color-primary);
   margin-bottom: var(--space-6);
 }
 
 .hero__headline em {
-  font-style: italic;
+  font-style: normal;
   display: inline-block;
 }
 
 .hero__headline-accent {
   font-style: normal;
-  font-weight: 700;
-  color: #628268;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-sage) 0%, var(--color-pop) 60%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   display: inline-block;
   margin-right: 0.3ch;
 }
@@ -120,21 +128,21 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-sage) 0%, var(--color-pop) 100%);
   color: var(--color-white);
   font-size: var(--text-sm);
-  font-weight: var(--weight-medium);
-  padding: 0.85rem 1.6rem;
+  font-weight: 600;
+  padding: 0.9rem 1.7rem;
   border-radius: var(--radius-pill);
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(28, 36, 32, 0.22);
+  box-shadow: 0 12px 30px rgba(124, 92, 255, 0.28);
   transition: all var(--duration-base) var(--ease-out);
 }
 
 .hero__cta-primary:hover {
-  background-color: #27342d;
+  filter: brightness(1.05);
   transform: translateY(-2px);
-  box-shadow: 0 14px 36px rgba(28, 36, 32, 0.28);
+  box-shadow: 0 16px 36px rgba(0, 194, 168, 0.32);
 }
 
 .hero__cta-secondary {
@@ -342,7 +350,7 @@
   border-radius: 28px;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(145deg, #e4ede6 0%, #cbdacf 50%, #b8cdc0 100%);
+  background: linear-gradient(145deg, #E9FFF9 0%, #EDE8FF 55%, #FFE9EC 100%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -368,9 +376,9 @@
   width: 100%;
   height: 170px;
   border-radius: 20px;
-  background: #1C2420;
+  background: linear-gradient(160deg, #1B1F3B 0%, #3A2E7A 100%);
   border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: inset 0 2px 8px rgba(255,255,255,0.2), 0 8px 24px rgba(0,0,0,0.12);
+  box-shadow: inset 0 2px 8px rgba(255,255,255,0.15), 0 10px 28px rgba(27,31,59,0.18);
   position: relative;
   overflow: hidden;
 }
@@ -407,9 +415,26 @@
   width: 70px;
   height: 95px;
   border-radius: 14px;
-  background: rgba(30, 42, 34, 0.85);
-  border: 2px solid rgba(255,255,255,0.85);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  background: linear-gradient(160deg, #00C2A8 0%, #7C5CFF 100%);
+  border: 2px solid rgba(255,255,255,0.9);
+  box-shadow: 0 8px 20px rgba(27,31,59,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero__phone-video-2::after {
+  content: 'You';
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(27, 31, 59, 0.25);
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
 }
 
 .hero__phone-controls {

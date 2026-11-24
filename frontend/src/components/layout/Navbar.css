@@ -15,7 +15,7 @@
 }
 
 .navbar--scrolled {
-  background-color: rgba(247, 248, 244, 0.92);
+  background-color: rgba(246, 247, 255, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-nav);
@@ -123,9 +123,10 @@
 }
 
 .navbar__pill-item--active {
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-sage), var(--color-pop));
   color: var(--color-text-inverse) !important;
   font-weight: var(--weight-semibold);
+  box-shadow: 0 6px 16px rgba(124, 92, 255, 0.25);
 }
 
 /* ── Right actions ───────────────────────────────────────── */
@@ -176,7 +177,7 @@
 .navbar__cta:hover {
   background-color: var(--color-sage-hover);
   transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(107, 143, 113, 0.4);
+  box-shadow: 0 6px 24px rgba(0, 194, 168, 0.4);
 }
 
 /* ── Mobile hamburger ────────────────────────────────────── */

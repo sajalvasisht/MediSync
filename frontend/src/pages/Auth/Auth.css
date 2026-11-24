@@ -114,7 +114,7 @@
 .auth-input:focus {
   border-color: var(--color-sage);
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(107, 143, 113, 0.2);
+  box-shadow: 0 0 0 3px rgba(0, 194, 168, 0.2);
 }
 
 .auth-submit-btn {
